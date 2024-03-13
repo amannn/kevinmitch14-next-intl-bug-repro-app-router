@@ -1,6 +1,6 @@
 function getSubdomain(host: string | null | undefined) {
   if (typeof host !== "string" || host.trim() === "") return "";
-  return host.replace(".localhost:3000", "").replace(".admoai.xyz", "");
+  return host.replace(".localhost:3000", "");
 }
 
 const handleI18nRouting = createIntlMiddleware({
