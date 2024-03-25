@@ -1,11 +1,15 @@
-import React from "react";
+import React from 'react';
 
 export default function Layout({
   params,
-  children,
+  children
 }: {
   children: React.ReactNode;
-  params: { locale: string; tenant: string };
+  params: {locale: string; tenant: string};
 }) {
-  return <html lang={params.locale}>{children}</html>;
+  return (
+    <html lang={params.locale}>
+      <body>{children}</body>
+    </html>
+  );
 }

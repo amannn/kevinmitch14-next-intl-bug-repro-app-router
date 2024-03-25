@@ -1,5 +1,9 @@
-"use client";
-
 export default function NotFound() {
-  return "notFound() in [locale]";
+  return (
+    <html>
+      <body>
+        <p>notFound() in [locale]</p>
+      </body>
+    </html>
+  );
 }
