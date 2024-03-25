@@ -19,12 +19,17 @@ export default async function middleware(request: NextRequest) {
   const path = url.pathname;
   console.log({subdomain, path});
   if (subdomain === 'localhost:3000') {
-    return NextResponse.next();
+    // return NextResponse.next();
   }
+
+  // TODO: Extract correctly
+  const tenant = 'test';
+
+  request.nextUrl.pathname = `/${tenant}${path}`;
 
   const response = handleI18nRouting(request);
   return response;
 }
 export const config = {
-  matcher: ['/', '/(de|en)/:path*']
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)']
 };
